@@ -29,7 +29,8 @@
         </div>
     </header>
     <main>
-        <form action="<%=request.getContextPath()%>/" method="post" enctype="multipart/form-data" id="data_upload_form">
+        <form action="<%=request.getContextPath()%>/insertBook" method="post" enctype="multipart/form-data" id="data_upload_form">
+            <!ユーザが入力したデータをrequest.getContextPathに送信>
             <h1>書籍の編集</h1>
             <div class="content_body add_book_content">
                 <div>
@@ -53,33 +54,32 @@
                                 </c:forEach>
                             </div>
                         </c:if>
-                        <span>書籍名</span><span class="care care2">必須</span>
+                        <span>書籍名</span> <span class="care care2">必須</span> <input type="text" class="input" id="title" name="title" autocomplete="off" value="${bookInfo.title}" required>
                     </div>
                     <div>
-                        <span>著者名</span><span class="care care2">必須</span>
+                        <span>著者名</span><span class="care care2">必須</span> <input type="text" class="input" id="author" name="author" autocomplete="off" value="${bookInfo.author}" required>
                     </div>
                     <div>
-                        <span>出版社</span><span class="care care2">必須</span>
+                        <span>出版社</span><span class="care care2">必須</span> <input type="text" class="input" id="publisher" name="publisher" autocomplete="off" value="${bookInfo.publisher}" required>
                     </div>
                     <div>
-                        <span>出版日</span><span class="care care2">必須</span>
+                        <span>出版日</span><span class="care care2">必須</span> <input type="text" class="input" id="publishDate" name="publishDate" autocomplete="off" value="${bookInfo.publishDate}" required>
                     </div>
                     <div>
-                        <span>ISBN</span><span class="care care1">任意</span>
+                        <span>ISBN</span><span class="care care1">任意</span> <input type="text" class="input" id="isbn" name="isbn" autocomplete="off" value="${bookInfo.isbn}">
                     </div>
                     <div>
-                        <span>説明文</span><span class="care care1">任意</span>
+                        <span>説明文</span><span class="care care1">任意</span> <input type="text" class="input" id="description" name="description" autocomplete="off value="${bookInfo.description}"">
                     </div>
                     <input type="hidden" id="bookId" name="bookId" value="${bookInfo.bookId}">
                 </div>
             </div>
             <div class="bookBtn_box">
-                <button type="submit" id="add-btn" class="btn_updateBook">更新</button>    
+                <button type="submit" id="add-btn" class="btn_updateBook">更新</button>
+                <button type="submit" id="delete-btn" class="btn_deleteBook">削除</button>
         </form>
-        		<form method="post" action="deleteBook" name="delete">
-
- 				</form>
- 			</div>      
+        <form method="post" action="deleteBook" name="delete"></form>
+        </div>
     </main>
 </body>
 </html>

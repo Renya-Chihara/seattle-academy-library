@@ -26,7 +26,7 @@ public class BookUtil {
 	 * @return errorList エラーメッセージのリスト
 	 */
 	public List<String> checkBookInfo(BookDetailsInfo bookInfo) {
-
+		
 		//TODO　各チェックNGの場合はエラーメッセージをリストに追加（タスク４）
 		List<String> errorList = new ArrayList<>();
 		// 必須チェック
@@ -97,5 +97,4 @@ public class BookUtil {
 			return false;
 		}
 	}
-
 }

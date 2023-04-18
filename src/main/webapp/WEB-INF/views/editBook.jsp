@@ -29,7 +29,7 @@
         </div>
     </header>
     <main>
-        <form action="<%=request.getContextPath()%>/insertBook" method="post" enctype="multipart/form-data" id="data_upload_form">
+        <form action="<%=request.getContextPath()%>/updateBook" method="post" enctype="multipart/form-data" id="data_upload_form">
             <!ユーザが入力したデータをrequest.getContextPathに送信>
             <h1>書籍の編集</h1>
             <div class="content_body add_book_content">
@@ -76,7 +76,6 @@
             </div>
             <div class="bookBtn_box">
                 <button type="submit" id="add-btn" class="btn_updateBook">更新</button>
-                <button type="submit" id="delete-btn" class="btn_deleteBook">削除</button>
         </form>
         <form method="post" action="deleteBook" name="delete"></form>
         </div>

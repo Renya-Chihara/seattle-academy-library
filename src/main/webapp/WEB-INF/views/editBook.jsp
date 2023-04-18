@@ -54,22 +54,22 @@
                                 </c:forEach>
                             </div>
                         </c:if>
-                        <span>書籍名</span> <span class="care care2">必須</span> <input type="text" class="input" id="title" name="title" autocomplete="off" value="${bookInfo.title}" required>
+                        <span>書籍名</span> <span class="care care2">必須</span> <input type="text" id="title" name="title" autocomplete="off" value="${bookInfo.title}">
                     </div>
                     <div>
-                        <span>著者名</span><span class="care care2">必須</span> <input type="text" class="input" id="author" name="author" autocomplete="off" value="${bookInfo.author}" required>
+                        <span>著者名</span><span class="care care2">必須</span> <input type="text" id="author" name="author" autocomplete="off" value="${bookInfo.author}">
                     </div>
                     <div>
-                        <span>出版社</span><span class="care care2">必須</span> <input type="text" class="input" id="publisher" name="publisher" autocomplete="off" value="${bookInfo.publisher}" required>
+                        <span>出版社</span><span class="care care2">必須</span> <input type="text" id="publisher" name="publisher" autocomplete="off" value="${bookInfo.publisher}">
                     </div>
                     <div>
-                        <span>出版日</span><span class="care care2">必須</span> <input type="text" class="input" id="publishDate" name="publishDate" autocomplete="off" value="${bookInfo.publishDate}" required>
+                        <span>出版日</span><span class="care care2">必須</span> <input type="text" id="publishDate" name="publishDate" autocomplete="off" value="${bookInfo.publishDate}">
                     </div>
                     <div>
-                        <span>ISBN</span><span class="care care1">任意</span> <input type="text" class="input" id="isbn" name="isbn" autocomplete="off" value="${bookInfo.isbn}">
+                        <span>ISBN</span><span class="care care1">任意</span> <input type="text" id="isbn" name="isbn" autocomplete="off" value="${bookInfo.isbn}">
                     </div>
                     <div>
-                        <span>説明文</span><span class="care care1">任意</span> <input type="text" class="input" id="description" name="description" autocomplete="off value="${bookInfo.description}"">
+                        <span>説明文</span><span class="care care1">任意</span> <input type="text" id="description" name="description" autocomplete="off value="${bookInfo.description}"">
                     </div>
                     <input type="hidden" id="bookId" name="bookId" value="${bookInfo.bookId}">
                 </div>

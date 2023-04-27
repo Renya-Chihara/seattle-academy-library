@@ -1,7 +1,6 @@
 package jp.co.seattle.library.controller;
 
 import java.util.List;
-import java.util.Objects;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import jp.co.seattle.library.dto.BookInfo;
 import jp.co.seattle.library.service.BooksService;
@@ -34,10 +34,21 @@ public class HomeController {
 	public String transitionHome(Model model) {
 		//書籍の一覧情報を取得（タスク３）
 		List<BookInfo> bookList = booksService.getBookList();
-		if (Objects.nonNull(bookList)) {
+		if (!(bookList.isEmpty())) {
 			model.addAttribute("BookList",bookList);
 		} else {
 			model.addAttribute("resultMessage", "書籍データは0件です。");
+		}
+		return "home";
+	}
+	
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	public String searchList(@RequestParam("bookTitle") String bookTitle, Model model) {
+		List<BookInfo> searchBook= booksService.searchBook(bookTitle);
+		if(searchBook.isEmpty()) {
+			model.addAttribute("resultMessage", "書籍データは0件です。");
+		}else {
+			model.addAttribute("BookList", searchBook);
 		}
 		return "home";
 	}

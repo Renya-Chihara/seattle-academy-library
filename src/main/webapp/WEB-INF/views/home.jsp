@@ -26,7 +26,15 @@
     </header>
     <main>
         <h1>Home</h1>
-        <a href="<%=request.getContextPath()%>/addBook" class="btn_add_book">書籍の追加</a>
+        <form action="<%=request.getContextPath()%>/search" method="get">
+            <div class="flecs">
+                <div class="search1">
+                    <input id="sbox1" id="s" name="bookTitle" type="text" placeholder="キーワードを入力" />
+                     <button id="sbtn1" type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </form>
+        <a href="<%=request.getContextPath()%>/addBook" class="btn_add_book">書籍の追加</a> <a class="btn_add_book" href="<%=request.getContextPath()%>/mulchselect">複数選択</a>
         <div class="content_body">
             <c:if test="${!empty resultMessage}">
                 <div class="error_msg">${resultMessage}</div>
@@ -53,7 +61,6 @@
                     </c:forEach>
                 </div>
             </div>
-        </div>
     </main>
 </body>
 </html>

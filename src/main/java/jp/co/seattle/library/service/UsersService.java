@@ -39,7 +39,7 @@ public class UsersService {
 		// SQL生成
 		String sql = "UPDATE users set password = ? where email = ?;";
 
-		jdbcTemplate.update(sql,userInfo.getEmail(),userInfo.getPassword());
+		jdbcTemplate.update(sql,userInfo.getPassword(),userInfo.getEmail());
 	}
 	//"DELETE FROM books WHERE id=?;";
 	//UPDATE (表名) SET (カラム名1) = (値1) WHERE (条件);
